@@ -1,11 +1,12 @@
-import { Component } from "react";
+import Layout from "../Layout";
+import "./App.scss";
 
-export default class App extends Component {
-  render() {
-    return (
-      <>
+export default function App() {
+  return (
+    <>
+      <Layout>
         <span>Hello World!!!</span>
-      </>
-    )
-  }
+      </Layout>
+    </>
+  )
 }

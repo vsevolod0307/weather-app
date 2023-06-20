@@ -39,6 +39,17 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/, // не обрабатываем файлы из node_modules
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true, // Использование кэша для избежания рекомпиляции
+            // при каждом запуске
+          },
+        },
+      },
       { 
         test: /\.(html)$/, use: ["html-loader"] 
       },
@@ -60,17 +71,6 @@ module.exports = {
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
         type: 'asset/resource',
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/, // не обрабатываем файлы из node_modules
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true, // Использование кэша для избежания рекомпиляции
-            // при каждом запуске
-          },
-        },
       },
     ]
   }
