@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Header from "../Header";
 import { useQuery } from "react-query";
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 
 const getWeather = async () => {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=3270906cf868939a75714f7803a5cb2b`)
-    return res.json();
+    return await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=33.44&lon=-94.04&appid=${WEATHER_API_KEY}`)
+        .then(res => res.json())
+        .then(json => json)
 }
 
 export default function Layout({children}) {
@@ -14,9 +16,10 @@ export default function Layout({children}) {
     return (
         <>
             <Header/>
-            {isLoading ? "Loading..." : "Loading Success"}
+            
             {/* {error ? error : "not error"} */}
             <main>
+                {isLoading ? "Loading..." : data.name}
                 {children}
             </main>
         </>

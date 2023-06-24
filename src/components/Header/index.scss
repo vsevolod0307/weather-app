@@ -1,4 +1,21 @@
 .header {
-    min-height: 80px;
+    min-height: 60px;
     background-color: #444444;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    &__logo {
+        color: #ffffff;
+    }
+    &__nav {
+        padding: 0 40px;
+    }
+    &_menu {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+    }
+    &_link {
+        color: #ffffff;
+    }
 }
