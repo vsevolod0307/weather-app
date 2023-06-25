@@ -1,11 +1,11 @@
 .header {
     min-height: 60px;
-    background-color: #444444;
+    background-color: #ececec;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     &__logo {
-        color: #ffffff;
+        padding-left: 40px;
     }
     &__nav {
         padding: 0 40px;
@@ -16,6 +16,6 @@
         align-items: center;
     }
     &_link {
-        color: #ffffff;
+        color: #000000;
     }
 }

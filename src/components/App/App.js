@@ -3,6 +3,7 @@ import Layout from "../Layout";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query-devtools";
 import "./App.scss";
+import SearchWeather from "../SearchWeather";
 
 const queryClient = new QueryClient({})
 
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Layout>
-        <span>Hello World!!!</span>
+        <SearchWeather/>
       </Layout>
       {/* <ReactQueryDevtools initialIsOpen={false}/> */}
     </QueryClientProvider>
